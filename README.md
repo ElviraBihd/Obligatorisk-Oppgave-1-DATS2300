@@ -1,22 +1,27 @@
 # Obligatorisk Oppgave 1 i DATS2300 - Algoritmer og Datastrukturer
 
-Denne oppgaven er en innlevering i Algoritmer og Datastruktorer.
+Denne oppgaven er en innlevering i Algoritmer og Datastrukturer.
 Oppgaven er levert av følgende studenter:
-* s123456, s123456@oslomet.no
-* ...
+* elbih9230, elbih9230@oslomet.no
 
-## Arbeidsfordeling
-I oppgaven har vi hatt følgende arbeidsfordeling:
-* s123456 har hatt hovedansvar for oppgave 1, 3, og 5.
-* s612345 har hatt hovedansvar for oppgave 2, 4, og 6.
-* s561234 har hatt hjulpet til med oppgave 2, 4, 5, og hatt hovedansvar for 7.
-* s456123 har hatt hovedansvar for oppgave 8, og 9.
-* Vi har gjort oppgave 10 felles.
 
 ## Oppgavebeskrivelser
 
+### Oppgave 0
+I oppgave 0 lagde jeg metoden gruppeMedlemmer() som skal returnere en verdi av typen int som samsvarer antallet personer på teamet.
+
 ### Oppgave 1
-I oppgave 1 gikk vi frem ved å...
+I oppgave 1 lagde jeg metoden maks(int[] a) som finner den største verdien i en tabell. Jeg sammenligner to nabotall om gangen og bytter plass hvis tallet til venstre er størst. Slik flyttes den største verdien til slutten av tabellen, og returneres. Hvis tabellen er tom, kastes en NoSuchElementException.
 
 ### Oppgave 2
 I oppgave 2 gikk vi frem ved å...
+
+### Oppgave 3
+
+### Oppgave 4
+
+### Oppgave 5
+
+### Oppgave 6
+
+### Oppgave 8
