@@ -48,7 +48,7 @@ public class Oblig1 {
             return 0;
         }
 
-        // tabell sortert stigende sjekk
+        // sortert stigende sjekk
         for (int i = 1; i < a.length; i++) {
             if (a[i] < a[i - 1]) {
                 throw new IllegalStateException("Tabellen er ikke sortert stigende!");
@@ -66,6 +66,7 @@ public class Oblig1 {
 
         return antall;
     }
+
     // Oppgave 3
     public static int antallUlikeUsortert(int[] a) {
         int antall = 0;
@@ -89,13 +90,64 @@ public class Oblig1 {
     }
 
     // Oppgave 4
-    public static void sorter(int[] a, int fra, int til) {throw new UnsupportedOperationException();}
+    public static void sorter(int[] a, int fra, int til) {
+        if (fra < 0 || til > a.length) {
+            throw new IndexOutOfBoundsException("Ugyldig intervall!");
+        }
+
+        if (fra >= til) {
+            return;
+        }
+
+        java.util.Arrays.sort(a, fra, til);
+    }
 
     // Oppgave 5
-    public static void delsortering(int[] a) {throw new UnsupportedOperationException();}
+    public static void delsortering(int[] a) {
+        int venstre = 0;
+        int hoyre = a.length - 1;
+
+        // flytte oddetall til venstre og partall til høyre
+        while (venstre <= hoyre) {
+
+            while (venstre <= hoyre && a[venstre] % 2 != 0) {
+                venstre++;
+            }
+
+            while (venstre <= hoyre && a[hoyre] % 2 == 0) {
+                hoyre--;
+            }
+
+            if (venstre < hoyre) {
+                int temp = a[venstre];
+                a[venstre] = a[hoyre];
+                a[hoyre] = temp;
+
+                venstre++;
+                hoyre--;
+            }
+        }
+
+        // sorter oddetall og partall hver for seg
+        sorter(a, 0, venstre);
+        sorter(a, venstre, a.length);
+    }
+
 
     // Oppgave 6
-    public static void rotasjon(char[] a) {throw new UnsupportedOperationException();}
+    public static void rotasjon(char[] a) {
+        if (a.length <= 1) {
+            return;
+        }
+
+        char siste = a[a.length - 1];
+
+        for (int i = a.length - 1; i > 0; i--) {
+            a[i] = a[i - 1];
+        }
+
+        a[0] = siste;
+    }
 
     // Oppgave 7
     public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}
