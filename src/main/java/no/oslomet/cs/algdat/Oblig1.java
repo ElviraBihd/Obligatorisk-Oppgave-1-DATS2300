@@ -153,10 +153,46 @@ public class Oblig1 {
     public static void rotasjon(char[] a, int k) {throw new UnsupportedOperationException();}
 
     // Oppgave 8
-    public static String flett(String s, String t) {throw new UnsupportedOperationException();}
+    public static String flett(String s, String t) {
+        StringBuilder resultat = new StringBuilder();
 
-    public static String flett(String... s) {throw new UnsupportedOperationException();}
+        int minLengde = Math.min(s.length(), t.length());
 
+        for (int i = 0; i < minLengde; i++) {
+            resultat.append(s.charAt(i));
+            resultat.append(t.charAt(i));
+        }
+
+        resultat.append(s.substring(minLengde));
+        resultat.append(t.substring(minLengde));
+
+        return resultat.toString();
+    }
+
+
+    public static String flett(String... s) {
+        StringBuilder resultat = new StringBuilder();
+
+        int maksLengde = 0;
+
+        // finne lengden på den lengste strengen
+        for (String streng : s) {
+            if (streng.length() > maksLengde) {
+                maksLengde = streng.length();
+            }
+        }
+
+        // gå gjennom en bokstavposisjon om gangen
+        for (int i = 0; i < maksLengde; i++) {
+            for (String streng : s) {
+                if (i < streng.length()) {
+                    resultat.append(streng.charAt(i));
+                }
+            }
+        }
+
+        return resultat.toString();
+    }
     // Oppgave 9
     public static int[] indeksSortering(int[] a) {throw new UnsupportedOperationException();}
 
