@@ -154,7 +154,7 @@ public class Oblig1 {
 
     // Oppgave 8
     public static String flett(String s, String t) {
-        StringBuilder resultat = new StringBuilder();
+        StringBuilder resultat = new StringBuilder(s.length() + t.length());
 
         int minLengde = Math.min(s.length(), t.length());
 
@@ -171,18 +171,22 @@ public class Oblig1 {
 
 
     public static String flett(String... s) {
-        StringBuilder resultat = new StringBuilder();
-
         int maksLengde = 0;
+        int totalLengde = 0;
 
-        // finne lengden på den lengste strengen
+        // finner lengden på den lengste strengen og total lengde
         for (String streng : s) {
             if (streng.length() > maksLengde) {
                 maksLengde = streng.length();
             }
+
+            totalLengde += streng.length();
         }
 
-        // gå gjennom en bokstavposisjon om gangen
+        StringBuilder resultat = new StringBuilder(totalLengde);
+
+
+        // går gjennom en bokstavposisjon om gangen
         for (int i = 0; i < maksLengde; i++) {
             for (String streng : s) {
                 if (i < streng.length()) {
